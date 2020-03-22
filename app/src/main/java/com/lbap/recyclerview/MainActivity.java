@@ -1,10 +1,11 @@
 package com.lbap.recyclerview;
 
+import android.os.Bundle;
+import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +16,34 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
-        String[] values = new String[]{"Spider-Man", "Thanos", "Iron Man",
-                "Deadpool", "Captain America", "Black Widow", "Hulk", "Wolverine", "Thor",
-                "Ant Man", "Black Panther"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, values);
+        ArrayList<Movie> movies = new ArrayList<>();
+
+        Movie movie = new Movie(1, "Spider-Man: Home Coming", "12-01-2016");
+        movies.add(movie);
+
+        movie = new Movie(2, "Iron Man", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(3, "Deadpool", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(4, "Captain America", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(5, "Black Widow", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(5, "Black Widow", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(6, "Hulk", "12-01-2009");
+        movies.add(movie);
+
+        movie = new Movie(6, "Wolverine", "12-01-2009");
+        movies.add(movie);
+
+        MovieAdapter adapter = new MovieAdapter(this, movies);
         listView.setAdapter(adapter);
     }
+
 }
