@@ -16,7 +16,7 @@ import java.util.List;
 public class MovieAdapter extends ArrayAdapter<Movie> {
 
     private Context mContext;
-    private List<Movie> movieList = new ArrayList<>();
+    private List<Movie> movieList;
 
     public MovieAdapter(@NonNull Context context, @NonNull List<Movie> movies) {
         super(context, 0, movies);
